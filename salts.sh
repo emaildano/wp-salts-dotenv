@@ -15,7 +15,11 @@ array=(
   NONCE_SALT
 )
 
+# Clear Existing Env Salts
+> .env.salts
+
 for i in "${array[@]}"
 do
-	echo $i=`salt`
+  # Add Salts array to file
+	echo $i=`salt` >> .env.salts
 done
